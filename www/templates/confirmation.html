@@ -1,0 +1,64 @@
+<ion-view title="Confirmation">
+  <ion-content padding="true" class="has-header">
+    <ion-list>
+      <ion-item class="item-thumbnail-left">
+        <img ng-src="img/{{reservation.roomObject.images.image1}}" alt="">
+        <h2>{{reservation.roomObject.hotelName}}</h2>
+        <p>{{reservation.roomObject.beds}}</p>
+        <p>{{reservation.roomObject.price}} {{reservation.roomObject.currency}}
+        </p>
+        <p>Total: <strong>{{reservation.price}} {{reservation.roomObject.currency}}</strong></p>
+      </ion-item>
+      <ng-form name="ConfirmationForm" class="animate-show-hide" ng-hide="reservation.hideForm">
+        <h4>Person</h4>
+        <div class="item range"> Adults: {{reservation.adults}}
+          <i class="icon ion-ios-person"></i>
+          <input type="range" min="1" max="4" ng-model="reservation.adults">
+          <i class="icon ion-ios-people"></i>
+        </div>
+        <div class="item range"> Children: {{reservation.children}}
+          <i class="icon ion-ios-person"></i>
+          <input type="range" min="0" max="4" ng-model="reservation.children">
+          <i class="icon ion-ios-people"></i>
+        </div>
+        
+
+      
+
+          <h4>Information</h4>
+          <label class="item item-input">
+          <input class="col" type="text" ng-model="reservation.firstName" 
+                 placeholder="First name" ng-minlength="2" ng-maxlength="15" required>
+          <input class="col" type="text" ng-model="reservation.lastName" 
+                 placeholder="Last name" ng-minlength="2" ng-maxlength="15" required>
+        </label>
+          <label class="item item-input">
+          <input type="text" placeholder="Address" ng-model="reservation.address" 
+                 ng-minlength="1" ng-maxlength="30" required>
+        </label>
+        </label>
+          <label class="item item-input">
+          <input type="tel" ng-model="reservation.phone" placeholder="Phone number" 
+                 minlength="5" maxlength="15" required>
+        </label>
+          <label class="item item-input">
+          <input type="email" ng-model="reservation.email" placeholder="E-mail" 
+                 minlength="5" required>
+        </label>
+        </div>
+        <button class="button button-balanced  button-block icon-left ion-android-checkmark-circle" ng-click="showPopup()" ng-disabled="ConfirmationForm.$invalid">
+          Confirm reservation
+        </button>
+      </ng-form>
+      <div ng-show="reservation.hideForm" class="finished">
+        <img ng-src="img/checked.svg">
+        <h2>Thank you {{reservation.firstName}}!</h2>
+        <p>See You soon {{reservation.checkinString}}</p>
+        <button class="button button-energized buttonBlack button-block icon-left" 
+                ui-sref="start" ng-click="changeHideForm()">
+          Back to start
+        </button>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

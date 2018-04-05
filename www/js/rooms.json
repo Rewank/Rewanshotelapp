@@ -1,0 +1,40 @@
+[
+  {
+    "roomID": "room1",
+    "roomType":"Single room",
+    "roomName":"Single room",
+    "price": 500,
+    "beds": "2 beds",
+    "currency": "SEK",
+  
+    "images": {
+        "image1": "singleroom.jpg"
+    }
+  },
+  
+  {
+    "roomID": "room2",
+    "roomType":"Double room",
+    "roomName":"Double room",
+    "price": 700,
+    "beds": "4 beds",
+    "currency": "SEK",
+  
+    "images": {
+        "image1": "doubleroom.jpg"
+        
+    }
+  },
+  {
+    "roomID": "room3",
+    "roomType":"Family room",
+    "roomName":"Family room ",
+    "price": 900,
+    "beds": "5 beds",
+    "currency": "SEK",
+    "images": {
+        "image1": "familyroom.jpg"
+    }
+  }
+ 
+]
